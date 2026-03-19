@@ -1,0 +1,13 @@
+client localhost {
+  ipaddr = 127.0.0.1
+  secret = testing123
+  shortname = localhost
+  nastype = other
+}
+
+client ${RADIUS_CLIENT_NAME} {
+  ipaddr = ${RADIUS_CLIENT_IPADDR}
+  secret = ${RADIUS_SHARED_SECRET}
+  shortname = ${RADIUS_CLIENT_SHORTNAME}
+  nastype = ${RADIUS_NAS_TYPE}
+}

@@ -1,0 +1,34 @@
+server inner-tunnel {
+  authorize {
+    chap
+    mschap
+    suffix
+    update control {
+      Proxy-To-Realm := LOCAL
+    }
+    sql
+    pap
+  }
+
+  authenticate {
+    Auth-Type PAP {
+      pap
+    }
+
+    Auth-Type CHAP {
+      chap
+    }
+
+    Auth-Type MS-CHAP {
+      mschap
+    }
+  }
+
+  session {
+    sql
+  }
+
+  post-auth {
+    sql
+  }
+}
