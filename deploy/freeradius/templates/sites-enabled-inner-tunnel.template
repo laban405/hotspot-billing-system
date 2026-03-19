@@ -3,6 +3,7 @@ server inner-tunnel {
     chap
     mschap
     suffix
+    eap
     update control {
       Proxy-To-Realm := LOCAL
     }
@@ -21,6 +22,10 @@ server inner-tunnel {
 
     Auth-Type MS-CHAP {
       mschap
+    }
+
+    Auth-Type EAP {
+      eap
     }
   }
 

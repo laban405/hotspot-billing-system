@@ -17,6 +17,7 @@ server default {
     mschap
     digest
     suffix
+    eap
     expiration
     logintime
     sql
@@ -34,6 +35,10 @@ server default {
 
     Auth-Type MS-CHAP {
       mschap
+    }
+
+    Auth-Type EAP {
+      eap
     }
   }
 
