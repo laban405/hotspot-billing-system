@@ -1,8 +1,16 @@
 #!/bin/sh
 set -eu
 
-config_root="/etc/freeradius/3.0"
 template_root="/opt/radius/templates"
+
+if [ -d "/etc/freeradius/3.0" ]; then
+  config_root="/etc/freeradius/3.0"
+elif [ -d "/etc/raddb" ]; then
+  config_root="/etc/raddb"
+else
+  echo "FreeRADIUS config directory not found" >&2
+  exit 1
+fi
 
 : "${RADIUS_DB_HOST:?RADIUS_DB_HOST is required}"
 : "${RADIUS_DB_PORT:?RADIUS_DB_PORT is required}"
