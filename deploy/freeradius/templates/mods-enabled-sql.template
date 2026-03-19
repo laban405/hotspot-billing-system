@@ -34,5 +34,5 @@ sql {
     idle_timeout = 60
   }
 
-  $INCLUDE ${modconfdir}/${.:name}/main/${dialect}/queries.conf
+  $INCLUDE /etc/freeradius/mods-config/sql/main/mysql/queries.conf
 }
